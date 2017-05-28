@@ -9,24 +9,100 @@
       <!--Let browser know website is optimized for mobile-->
       <!--Maybe-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
   <body>
 
+  <header class="container center">
+    <h1>Journal</h1>
+    <p class="flow-text">APIs of hell</p>
+  </header>
+  
+  <!--Fixed Action Button-->
     <div class="fixed-action-btn horizontal">
-      <a class="btn-floating btn-large red">
+      <a class="btn-floating btn-large green accent-3">
         <i class="large material-icons">mode_edit</i>
       </a>
       <ul>
-        <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-        <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-        <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+        <li><a class="btn-floating light-green accent-3" href="#modalMsj" ><i class="material-icons" data-target="modal1">message</i></a></li>
+        <li><a class="btn-floating amber" href="#modalEvent"><i class="material-icons">today</i></a></li>
+        <li><a class="btn-floating purple accent-3" href="#modalImg"><i class="material-icons">attach_file</i></a></li>
       </ul>
     </div>
+    <!--Fin FAB-->
 
-      <!--Import jQuery before materialize.js-->
+    <!-- Modal Mensaje -->
+    <div class="modal" id="modalMsj">
+      <div class="modal-content row">
+        <div class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="modal-msj-title" type="text" class="validate" data-length="10" />
+                <label for="title">Título</label>
+            </div>
+            <div class="input-field col s12">
+              <textarea id="modal-msj-message" class="materialize-textarea"></textarea>
+              <label for="message">Mensaje</label>
+            </div>
+            <button class="btn waves-effect waves-light right green accent-3" type="submit" name="action" data-publication="text">Publicar
+            <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--fin modal mensaje-->
+    <!--Modal evento-->
+    <div id="modalEvent" class="modal">
+      <div class="modal-content row">
+        <div class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input type="text" class="validate" data-length="10" id="modal-event-title" />
+                <label for="first_name">Título</label>
+            </div>
+            <div class="input-field col s12">
+              <input type="date" class="datepicker" id="modal-event-date" placeholder="Fecha">
+            </div>
+            <button class="btn waves-effect waves-light right green accent-3" type="submit" name="action" data-publication="event">Publicar
+            <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- fin modal evento-->
+    <!--modal imagenes-->
+    <div id="modalImg" class="modal">
+      <div class="modal-content row">
+        <div class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="modal-image-title" type="text" class="validate" data-length="10" />
+              <label for="title">Título</label>
+            </div>
+            <div class="file-field input-field col s12">
+              <div class="btn green accent-3">
+                <span>Imagen</span>
+                  <input type="file" accept="image/*" id="image-file">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            </div>
+            <button class="btn waves-effect waves-light right green accent-3" type="submit" name="action" data-publication="image">Publicar
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--fin modal imagenes-->
+
+    <!--Import jQuery-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
         

@@ -1,0 +1,12 @@
+body{
+	background-color: #ff8a80;
+}
+h1, p{
+	color: #565656;
+}
+div.picker__date-display, .picker__weekday-display{
+	background-color: #ff8a80 ;
+}
+.picker__close, .picker__today, .picker__clear{
+	color: #ff8a80;
+}
