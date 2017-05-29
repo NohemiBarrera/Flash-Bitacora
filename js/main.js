@@ -52,4 +52,4 @@ function publicarTexto(){
   newTxt.value = "";
   titulo.value= "";
   cleanModal("modalMsj");
- }
+ };
