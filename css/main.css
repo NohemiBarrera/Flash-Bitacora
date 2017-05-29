@@ -10,3 +10,13 @@ div.picker__date-display, .picker__weekday-display{
 .picker__close, .picker__today, .picker__clear{
 	color: #ff8a80;
 }
+#publicaciones{
+	padding: 20px;
+	margin-left: 5%;
+	margin-right: 5%;
+	height: auto; 
+}
+
+article{
+	background-color: white; 
+}

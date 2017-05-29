@@ -12,22 +12,44 @@ $(document).ready(function(){
         }
     });
 
+//limpiar modal
+function cleanModal(id) {
+	let inputs = document.querySelectorAll('#' + id + ' input');
+	for (let input of inputs) {
+		input.value = '';
+	}
+	inputs = document.querySelectorAll('#' + id + ' textarea');
+	for (let input of inputs) {
+		input.value = '';
+	}
+	$('#' + id).modal('close');
+}
+
  //archivos
+var newTxt = document.getElementById("modal-msj-message");
+var publicar = document.getElementById("publicar");
+var publicaciones = document.getElementById("publicaciones");
+var titulo = document.getElementById("modal-msj-title");
+var txt = document.getElementById("texto");
 
- /*<input type="file" id="file">
-	<img src="#" alt="mm" id="chilaquilLOL">*/
+newTxt.addEventListener("keyup", contadorDeCaracteres);
+publicar.addEventListener("click", publicarTexto);
 
-		var file = document.getElementById("file");
+function contadorDeCaracteres(){
+  var numeroCaracteres = newTxt.value.length;
+  document.getElementById("caracteres").innerText = numeroCaracteres;
+}
 
-		file.addEventListener("change", manejarSubida); //de no tener archivo a tener un archivo
-
-		function manejarSubida(){
-			//console.log(this.files);
-			var reader = new FileReader();
-			reader.readAsDataURL(this.files[0]);
-
-			reader.onload =function(){
-				var imagenChilaquil = this.result;
-				document.getElementById("chilaquilLOL").setAttribute("src", imagenChilaquil);
-			}
-		}
+function publicarTexto(){
+  var articulo = document.createElement("article");
+  var parrafo = document.createElement("p");
+  var parrafo2 = document.createElement("h2");
+  parrafo2.innerText = titulo.value;
+  parrafo.innerText = newTxt.value;
+  articulo.appendChild(parrafo2);
+  articulo.appendChild(parrafo);
+  publicaciones.insertBefore(articulo, publicaciones.firstChild);
+  newTxt.value = "";
+  titulo.value= "";
+  cleanModal("modalMsj");
+ }
